@@ -6,11 +6,14 @@ terraform {
     }
   }
   backend "s3" {
-    
+    bucket = "neela-remote-state"
+    key = "multi-workspace"
+    region = "us-east-1"
+    dynamodb_table = "neelareddy.locking"
   }
 }
 
 #providers authentication here
 provider "aws" {
-  region ="us-east-1"
+  region = "us-east-1"
 }

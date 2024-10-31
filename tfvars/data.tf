@@ -1,11 +1,11 @@
-data "aws_ami" "ami_id" {
+data "aws_ami" "ami_info" {
 
     most_recent = true
     owners = ["973714476881"]
 
     filter {
        name = "name"
-       values = ["RHEL-9-DevOps-Pratice"] 
+       values = ["RHEL-9-DevOps-Practice"] 
     }
 
     filter {
@@ -14,7 +14,7 @@ data "aws_ami" "ami_id" {
     }
 
     filter {
-        name = "virtualization"
+        name = "virtualization-type"
         values = ["hvm"]
     }
 }
